@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Screenshot Editor</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Screenshot Editor</h1>
+        <div class="editor">
+            <div class="sidebar">
+                <h3><i class="material-icons">gradient</i> Gradient Options</h3>
+                <div class="gradient-options">
+                    <div class="gradient" data-gradient="light"></div>
+                    <div class="gradient" data-gradient="sunset"></div>
+                    <div class="gradient" data-gradient="ocean"></div>
+                    <div class="gradient" data-gradient="forest"></div>
+                    <div class="gradient" data-gradient="violet"></div>
+                    <div class="gradient" data-gradient="dark"></div>
+                </div>
+                <h3><i class="material-icons">aspect_ratio</i> Output Size</h3>
+                <select id="output-size">
+                    <option value="square">Square (1:1)</option>
+                    <option value="vertical">Vertical Rectangle (4:5)</option>
+                    <option value="horizontal">Horizontal Rectangle (5:4)</option>
+                </select>
+                <h3><i class="material-icons">tune</i> Adjustments</h3>
+                <div class="adjustment">
+                    <label for="roundness"><i class="material-icons">crop_square</i> Roundness:</label>
+                    <input type="range" id="roundness" min="0" max="100" value="0">
+                </div>
+                <div class="adjustment">
+                    <label for="shadow"><i class="material-icons">blur_on</i> Shadow:</label>
+                    <input type="range" id="shadow" min="0" max="50" value="10">
+                </div>
+                <div class="adjustment">
+                    <label for="image-size"><i class="material-icons">photo_size_select_large</i> Image Size:</label>
+                    <input type="range" id="image-size" min="50" max="150" value="100">
+                </div>
+            </div>
+            <div class="main">
+                <div class="drop-zone" id="drop-zone">
+                    <p><i class="material-icons">file_upload</i> Drag & Drop or Paste a Screenshot Here</p>
+                </div>
+                <canvas id="canvas" style="display: none;"></canvas>
+                <div class="output" id="output" style="display: none;">
+                    <div class="image-container">
+                        <img id="output-image" alt="Processed Image">
+                        <a id="download-link" class="download-button"><i class="material-icons">download</i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
