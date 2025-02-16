@@ -107,6 +107,13 @@ h1 {
     margin-bottom: 20px;
     cursor: pointer;
     transition: border-color 0.3s, background 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
 }
 
 .drop-zone:hover {
