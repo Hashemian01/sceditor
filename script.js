@@ -1,4 +1,5 @@
 const dropZone = document.getElementById('drop-zone');
+const fileInput = document.getElementById('file-input');
 const canvas = document.getElementById('canvas');
 const outputImage = document.getElementById('output-image');
 const downloadLink = document.getElementById('download-link');
@@ -32,6 +33,19 @@ dropZone.addEventListener('drop', (e) => {
 // Handle paste
 document.addEventListener('paste', (e) => {
     const file = e.clipboardData.files[0];
+    if (file) {
+        processImage(file);
+    }
+});
+
+// Handle file input click
+dropZone.addEventListener('click', () => {
+    fileInput.click();
+});
+
+// Handle file input change
+fileInput.addEventListener('change', (e) => {
+    const file = e.target.files[0];
     if (file) {
         processImage(file);
     }
